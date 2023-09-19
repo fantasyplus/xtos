@@ -1,0 +1,1 @@
+# 本节是在bootloader中用gdt进入保护模式
