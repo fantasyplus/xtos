@@ -96,6 +96,6 @@ p_mode_start:
     mov gs,ax
 
     mov byte [gs:160], 'P'
-    mov byte [gs:161], 0x17
+    mov byte [gs:161], 0x27
 
     jmp $

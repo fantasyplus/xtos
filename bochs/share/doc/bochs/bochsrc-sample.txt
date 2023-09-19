@@ -606,7 +606,7 @@ floppy_bootsig_check: disabled=0
 #   log: /dev/tty
 #=======================================================================
 #log: /dev/null
-log: ./bochs.out
+log: bochsout.txt
 
 #=======================================================================
 # LOGPREFIX:
@@ -816,8 +816,7 @@ parport1: enabled=1, file="parport.out"
 #   keyboard: keymap=gui/keymaps/x11-pc-de.map
 #   keyboard: user_shortcut=ctrl-alt-del
 #=======================================================================
-keyboard: type=mf, serial_delay=250
-keyboard: keymap=/home/xt/bochs/share/bochs/keymaps/x11-pc-us.map
+#keyboard: type=mf, serial_delay=250
 
 #=======================================================================
 # MOUSE:
@@ -1126,9 +1125,6 @@ pci: enabled=1, chipset=i440fx
 #megs: 256
 #megs: 128
 #megs: 64
-megs: 32
+#megs: 32
 #megs: 16
 #megs: 8
-
-＃下面的是增加的 bochs gdb 的支持，这样 gdb 可以远程连接到此机器的 234 口调试了
-gdbstub : enabled=l, port=l234, text_base=O, data_base=O, bss_base=O
