@@ -7,7 +7,7 @@ nasm -o build/loader -I ./boot/include/ ./boot/loader.S
 dd if=build/loader of=/home/web/xtos/bochs/bin/hd120M.img bs=512 count=4 conv=notrunc seek=2
 
 #编译main
-gcc -o build/main.o -c -m32 -I lib/kernel/ kernel/main.c
+gcc-4.6 -o build/main.o -c -m32 -I lib/kernel/ kernel/main.c
 
 #链接成内核
 ld -m elf_i386 -Ttext 0x00001500 -e main -o build/kernel.bin  build/main.o

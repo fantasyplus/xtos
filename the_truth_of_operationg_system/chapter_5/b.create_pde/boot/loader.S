@@ -18,7 +18,7 @@ VIDEO_DESC:
     dd 0x80000007	                                    ;limit=(0xbffff-0xb8000)/4k=0x7
     dd DESC_VIDEO_HIGH4                                 ; 此时dpl已改为0
 
-    GDT_SIZE equ $ - GDT_BASE
+    GDT_SIZE equ $ - GDT_BASE                           ;当前位置-GDT-BASE=GDT的大小
     GDT_LIMIT equ GDT_SIZE - 1 
     times 60 dq 0					                    ; 此处预留60个描述符的空间
     SELECTOR_CODE equ (0x0001<<3) + TI_GDT + RPL0       ; 相当于(CODE_DESC - GDT_BASE)/8 + TI_GDT + RPL0
@@ -34,6 +34,8 @@ gdt_ptr dw GDT_LIMIT                                    ;定义加载进入GDTR�
 
 ards_buf times 244 db 0                                 ;人工对齐:total_mem_bytes4字节+gdt_ptr6字节+ards_buf244字节+ards_nr2,共256字节
 ards_nr dw 0		                                    ;用于记录ards结构体数量
+
+;0x200+256(0x100)=0x300
 
 
 loader_start:
@@ -93,7 +95,7 @@ loader_start:
 .error_hlt:		                                        ;出错则挂起
     hlt
 
-[bits 32]
+[bits 32]                                               ;强制要求使用32位指令，因为进入了保护模式
 p_mode_start:
     mov ax,SELECTOR_DATA
     mov ds,ax
@@ -105,8 +107,8 @@ p_mode_start:
                                                         
     call setup_page                                     ;创建页目录表的函数,我们的页目录表必须放在1M开始的位置，所以必须在开启保护模式后运行
 
-                                                        ;以下两句是将gdt描述符中视频段描述符中的段基址+0xc0000000
-    mov ebx, [gdt_ptr + 2]                              ;ebx中存着GDT_BASE,gdt_ptr+2(47-15 gdb start addr,15-0 gdt limit)是gdt的基址,see line 32
+                                                        ;以下两句是将gdt描述符中视频段描述符中的段基址+0xc0000000（3G地址往上到4G）
+    mov ebx, [gdt_ptr + 2]                              ;ebx中存着GDT_BASE,gdt_ptr+2(47-15 gdt start addr,15-0 gdt limit)是gdt的基址,see line 32
     or dword [ebx + 0x18 + 4], 0xc0000000               ;视频段是第3个段描述符,每个描述符是8字节,故0x18 = 24，然后+4，是取出了视频段段描述符的高4字节。然后or操作，段基址最高位+c
                                            
     add dword [gdt_ptr + 2], 0xc0000000                 ;将gdt的基址加上0xc0000000使其成为内核所在的高地址
