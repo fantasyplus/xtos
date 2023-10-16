@@ -13,7 +13,7 @@
 
 #define IDT_DESC_CNT 0x21	   //支持的中断描述符个数33
 
-//按照中断门描述符格式定义结构体
+//按照中断门描述符格式定义结构体 8字节
 struct gate_desc {
    uint16_t    func_offset_low_word;        //函数地址低字
    uint16_t    selector;                    //选择子字段
