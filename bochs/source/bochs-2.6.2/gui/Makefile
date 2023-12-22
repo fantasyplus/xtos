@@ -66,7 +66,7 @@ GUI_OBJS_WX_SUPPORT = wxmain.o wxdialog.o
 OBJS_THAT_CANNOT_BE_PLUGINS = keymap.o gui.o siminterface.o paramtree.o textconfig.o enh_dbg.o gtk_enh_dbg_osdep.o 
 OBJS_THAT_CAN_BE_PLUGINS = 
 
-X_LIBS = -lX11  -lXrandr
+X_LIBS = -lX11 -lXpm -lXrandr
 X_PRE_LIBS = 
 GUI_LINK_OPTS_X = $(X_LIBS) $(X_PRE_LIBS)
 GUI_LINK_OPTS_SDL = `sdl-config --cflags --libs`

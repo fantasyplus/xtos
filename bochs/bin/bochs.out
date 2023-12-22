@@ -1,6 +1,6 @@
 00000000000i[     ] Bochs x86 Emulator 2.6.2
 00000000000i[     ]   Built from SVN snapshot on May 26, 2013
-00000000000i[     ] Compiled on Sep 19 2023 at 02:19:57
+00000000000i[     ] Compiled on Dec  1 2023 at 01:39:30
 00000000000i[     ] System configuration
 00000000000i[     ]   processors: 1 (cores=1, HT threads=1)
 00000000000i[     ]   A20 line support: yes
@@ -30,17 +30,17 @@
 00000000000i[     ]   SB16 support: no
 00000000000i[     ]   USB support: no
 00000000000i[     ]   VGA extension support: vbe
-00000000000i[MEM0 ] allocated memory at 0x7f98c1dcb010. after alignment, vector=0x7f98c1dcc000
+00000000000i[MEM0 ] allocated memory at 0x7f5a9cfa0010. after alignment, vector=0x7f5a9cfa1000
 00000000000i[MEM0 ] 32.00MB
 00000000000i[MEM0 ] mem block size = 0x00100000, blocks=32
-00000000000i[MEM0 ] rom at 0xfffe0000/131072 ('/home/web/xtos/bochs/share/bochs/BIOS-bochs-latest')
+00000000000i[MEM0 ] rom at 0xfffe0000/131072 ('/home/xt/xtos/bochs/share/bochs/BIOS-bochs-latest')
 00000000000i[     ] init_dev of 'pci' plugin device by virtual method
 00000000000i[DEV  ] i440FX PMC present at device 0, function 0
 00000000000i[     ] init_dev of 'pci2isa' plugin device by virtual method
 00000000000i[DEV  ] PIIX3 PCI-to-ISA bridge present at device 1, function 0
 00000000000i[     ] init_dev of 'cmos' plugin device by virtual method
 00000000000i[CMOS ] Using local time for initial clock
-00000000000i[CMOS ] Setting initial clock to: Sun Oct 15 01:16:20 2023 (time0=1697357780)
+00000000000i[CMOS ] Setting initial clock to: Thu Dec 21 22:54:31 2023 (time0=1703228071)
 00000000000i[     ] init_dev of 'dma' plugin device by virtual method
 00000000000i[DMA  ] channel 4 used by cascade
 00000000000i[     ] init_dev of 'pic' plugin device by virtual method
@@ -54,9 +54,9 @@
 00000000000i[BXVGA] VBE Bochs Display Extension Enabled
 00000000000i[XGUI ] test_alloc_colors: 16 colors available out of 16 colors tried
 00000000000i[XGUI ] font 8 wide x 16 high, display depth = 24
-00000000000i[KMAP ] Loading keymap from '/home/web/xtos/bochs/share/bochs/keymaps/x11-pc-us.map'
+00000000000i[KMAP ] Loading keymap from '/home/xt/xtos/bochs/share/bochs/keymaps/x11-pc-us.map'
 00000000000i[KMAP ] Loaded 168 symbols
-00000000000i[MEM0 ] rom at 0xc0000/41472 ('/home/web/xtos/bochs/share/bochs/VGABIOS-lgpl-latest')
+00000000000i[MEM0 ] rom at 0xc0000/41472 ('/home/xt/xtos/bochs/share/bochs/VGABIOS-lgpl-latest')
 00000000000i[     ] init_dev of 'acpi' plugin device by virtual method
 00000000000i[DEV  ] ACPI Controller present at device 1, function 3
 00000000000i[     ] init_dev of 'ioapic' plugin device by virtual method
@@ -66,7 +66,7 @@
 00000000000i[     ] init_dev of 'keyboard' plugin device by virtual method
 00000000000i[KBD  ] will paste characters every 400 keyboard ticks
 00000000000i[     ] init_dev of 'harddrv' plugin device by virtual method
-00000000000i[HD   ] HD on ata0-0: '/home/web/xtos/bochs/bin/hd120M.img', 'flat' mode
+00000000000i[HD   ] HD on ata0-0: '/home/xt/xtos/bochs/bin/hd120M.img', 'flat' mode
 00000000000i[IMG  ] hd_size: 16048
 00000000000p[IMG  ] >>PANIC<< size of disk image must be multiple of 512 bytes
 00000000000i[HD   ] ata0-0: using specified geometry: CHS=243/16/63
@@ -45764,30 +45764,27 @@
 00018038403e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
 00018038407e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
 00018038415i[MEM0 ] allocate_block: block=0x1 used 0x3 of 0x20
-00331309827i[     ] Ctrl-C detected in signal handler.
-00331309828i[XGUI ] Mouse capture off
-00331309828i[XGUI ] Mouse capture off
-00331309828i[     ] Ctrl-C detected in signal handler.
-00331309828i[     ] Ctrl-C detected in signal handler.
-00331309828i[     ] Ctrl-C detected in signal handler.
-00331309828i[     ] dbg: Quit
-00331309828i[CPU0 ] CPU is in protected mode (active)
-00331309828i[CPU0 ] CS.mode = 32 bit
-00331309828i[CPU0 ] SS.mode = 32 bit
-00331309828i[CPU0 ] EFER   = 0x00000000
-00331309828i[CPU0 ] | EAX=40a00000  EBX=000700d4  ECX=00000000  EDX=00000000
-00331309828i[CPU0 ] | ESP=c009efe0  EBP=c009effc  ESI=00070000  EDI=00000000
-00331309828i[CPU0 ] | IOPL=0 id vip vif ac vm rf nt of df IF tf SF zf af pf cf
-00331309828i[CPU0 ] | SEG sltr(index|ti|rpl)     base    limit G D
-00331309828i[CPU0 ] |  CS:0008( 0001| 0|  0) 00000000 ffffffff 1 1
-00331309828i[CPU0 ] |  DS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
-00331309828i[CPU0 ] |  SS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
-00331309828i[CPU0 ] |  ES:0010( 0002| 0|  0) 00000000 ffffffff 1 1
-00331309828i[CPU0 ] |  FS:0000( 0000| 0|  0) 00000000 00000000 0 0
-00331309828i[CPU0 ] |  GS:0018( 0003| 0|  0) c00b8000 00007fff 1 1
-00331309828i[CPU0 ] | EIP=c000151b (c000151b)
-00331309828i[CPU0 ] | CR0=0xe0000011 CR2=0x00000000
-00331309828i[CPU0 ] | CR3=0x00100000 CR4=0x00000000
-00331309828i[CMOS ] Last time is 1697357862 (Sun Oct 15 01:17:42 2023)
-00331309828i[XGUI ] Exit
-00331309828i[CTRL ] quit_sim called with exit code 0
+00527903761i[     ] Ctrl-C detected in signal handler.
+00527903762i[XGUI ] Mouse capture off
+00527903762i[     ] Ctrl-C detected in signal handler.
+00527903762i[     ] dbg: Quit
+00527903762i[CPU0 ] CPU is in protected mode (active)
+00527903762i[CPU0 ] CS.mode = 32 bit
+00527903762i[CPU0 ] SS.mode = 32 bit
+00527903762i[CPU0 ] EFER   = 0x00000000
+00527903762i[CPU0 ] | EAX=40a00000  EBX=000700d4  ECX=00000000  EDX=00000000
+00527903762i[CPU0 ] | ESP=c009efe0  EBP=c009effc  ESI=00070000  EDI=00000000
+00527903762i[CPU0 ] | IOPL=0 id vip vif ac vm rf nt of df IF tf SF zf af pf cf
+00527903762i[CPU0 ] | SEG sltr(index|ti|rpl)     base    limit G D
+00527903762i[CPU0 ] |  CS:0008( 0001| 0|  0) 00000000 ffffffff 1 1
+00527903762i[CPU0 ] |  DS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
+00527903762i[CPU0 ] |  SS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
+00527903762i[CPU0 ] |  ES:0010( 0002| 0|  0) 00000000 ffffffff 1 1
+00527903762i[CPU0 ] |  FS:0000( 0000| 0|  0) 00000000 00000000 0 0
+00527903762i[CPU0 ] |  GS:0018( 0003| 0|  0) c00b8000 00007fff 1 1
+00527903762i[CPU0 ] | EIP=c000151b (c000151b)
+00527903762i[CPU0 ] | CR0=0xe0000011 CR2=0x00000000
+00527903762i[CPU0 ] | CR3=0x00100000 CR4=0x00000000
+00527903762i[CMOS ] Last time is 1703228202 (Thu Dec 21 22:56:42 2023)
+00527903762i[XGUI ] Exit
+00527903762i[CTRL ] quit_sim called with exit code 0

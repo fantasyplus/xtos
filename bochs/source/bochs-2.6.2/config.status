@@ -445,7 +445,7 @@ Copyright (C) 2010 Free Software Foundation, Inc.
 This config.status script is free software; the Free Software Foundation
 gives unlimited permission to copy, distribute and modify it."
 
-ac_pwd='/home/web/xtos/bochs/source/bochs-2.6.2'
+ac_pwd='/home/xt/xtos/bochs/source/bochs-2.6.2'
 srcdir='.'
 test -n "$AWK" || AWK=awk
 # The default lists apply if the user does not specify any file.
@@ -723,9 +723,9 @@ S["IODEBUG_OBJS"]="iodebug.o"
 S["GDBSTUB_VAR"]=""
 S["DISASM_VAR"]="$(DISASM_LIB)"
 S["DEBUGGER_VAR"]="$(DEBUGGER_LIB)"
-S["NO_FLEX_YACC"]="#"
-S["YACC"]="not_found"
-S["FLEX"]="not_found"
+S["NO_FLEX_YACC"]=""
+S["YACC"]="/usr/bin/yacc"
+S["FLEX"]="/usr/bin/flex"
 S["CPP_SUFFIX"]="cc"
 S["SUFFIX_LINE"]=".SUFFIXES: .cc"
 S["NETLOW_OBJS"]=""
@@ -751,7 +751,7 @@ S["NONPLUGIN_GUI_LINK_OPTS"]="$(GUI_LINK_OPTS)"
 S["DEFINE_PLUGIN_PATH"]=""
 S["BX_USE_IDLE_HACK"]=""
 S["X_EXTRA_LIBS"]=""
-S["X_LIBS"]="-lX11  -lXrandr"
+S["X_LIBS"]="-lX11 -lXpm -lXrandr"
 S["X_PRE_LIBS"]=""
 S["X_CFLAGS"]=""
 S["XMKMF"]=""
@@ -1026,6 +1026,7 @@ D["BX_SUPPORT_SB16"]=" 0"
 D["BX_SUPPORT_ES1370"]=" 0"
 D["BX_SUPPORT_SOUNDLOW"]=" 0"
 D["BX_SUPPORT_GAMEPORT"]=" 0"
+D["BX_HAVE_XPM_H"]=" 1"
 D["BX_WITH_X11"]=" 1"
 D["BX_USE_TEXTCONFIG"]=" 1"
   for (key in D) D_is_set[key] = 1

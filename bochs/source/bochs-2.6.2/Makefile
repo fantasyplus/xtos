@@ -19,7 +19,7 @@
 # the following rules:
 #   use $(VAR) not ${VAR}
 
-prefix          = /home/web/xtos/bochs
+prefix          = /home/xt/xtos/bochs
 exec_prefix     = ${prefix}
 srcdir          = .
 
@@ -93,7 +93,7 @@ LIBS =  -lm -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk
 # To compile with readline:
 #   linux needs just -lreadline
 #   solaris needs -lreadline -lcurses
-X_LIBS = -lX11  -lXrandr
+X_LIBS = -lX11 -lXpm -lXrandr
 X_PRE_LIBS = 
 GUI_LINK_OPTS_X = $(X_LIBS) $(X_PRE_LIBS)
 GUI_LINK_OPTS_SDL = `sdl-config --cflags --libs`
