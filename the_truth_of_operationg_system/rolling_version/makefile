@@ -20,7 +20,7 @@ LDFLAGS= -Ttext $(ENTRY_POINT) -e main -Map $(BUILD_DIR)/kernel.map -m elf_i386
 
 OBJS=$(BUILD_DIR)/main.o $(BUILD_DIR)/init.o \
 	$(BUILD_DIR)/interrupt.o $(BUILD_DIR)/timer.o $(BUILD_DIR)/kernel.o \
-	$(BUILD_DIR)/print.o $(BUILD_DIR)/debug.o
+	$(BUILD_DIR)/print.o $(BUILD_DIR)/debug.o $(BUILD_DIR)/string.o
 #顺序最好是调用在前，实现在后
 
 ######################编译两个启动文件的代码#####################################
@@ -32,9 +32,9 @@ $(BUILD_DIR)/loader.o:boot/loader.S
 	$(AS) -I boot/include/ -o build/loader.o boot/loader.S
 	
 ######################编译C内核代码###################################################
+# $@表示规则中目标文件名的集合这里就是$(BUILD_DIR)/main.o  $<表示规则中依赖文件的第一个，这里就是kernle/main.c 
 $(BUILD_DIR)/main.o:kernel/main.c
 	$(CC) $(CFLAGS) -o $@ $<	
-# $@表示规则中目标文件名的集合这里就是$(BUILD_DIR)/main.o  $<表示规则中依赖文件的第一个，这里就是kernle/main.c 
 
 $(BUILD_DIR)/init.o:kernel/init.c
 	$(CC) $(CFLAGS) -o $@ $<
@@ -46,6 +46,9 @@ $(BUILD_DIR)/timer.o:device/timer.c
 	$(CC) $(CFLAGS) -o $@ $<
 
 $(BUILD_DIR)/debug.o:kernel/debug/debug.c
+	$(CC) $(CFLAGS) -o $@ $<
+
+$(BUILD_DIR)/string.o:lib/string.c
 	$(CC) $(CFLAGS) -o $@ $<
 
 ###################编译汇编内核代码#####################################################
