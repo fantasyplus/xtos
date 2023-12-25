@@ -11,6 +11,15 @@
 
 #define IDT_DESC_CNT 0x21 // 支持的中断描述符个数33
 
+#define EFLAGS_IF 0x00000200 // eflags寄存器中的if位为1
+
+// "pushfl; popl %0": 这是实际的汇编指令。
+
+// pushfl: 这条指令将当前的EFLAGS寄存器的值压入堆栈。EFLAGS寄存器包含了处理器的状态信息，比如是否发生溢出、是否有进位等。
+// popl %0: 这条指令将堆栈顶部的值弹出到一个变量中。在这里，%0是一个占位符，代表后面指定的C语言变量。
+//"=g": 表示这是一个输出操作数，g是一个约束条件，它告诉编译器这个操作数可以放在通用寄存器、内存或者是作为立即数使用。
+#define GET_EFLAGS(EFLAG_VAR) asm volatile("pushfl; popl %0" : "=g"(EFLAG_VAR))
+
 // 按照中断门描述符格式定义结构体(中断向量)
 struct gate_desc
 {
@@ -52,6 +61,57 @@ static void pic_init(void)
 
    put_str("   pic_init done\n");
 }
+
+/* 获取当前中断状态 */
+enum intr_status intr_get_status()
+{
+   uint32_t eflags = 0;
+   GET_EFLAGS(eflags);
+   return (EFLAGS_IF & eflags) ? INTR_ON : INTR_OFF;
+}
+
+/* 开中断并返回开中断前的状态*/
+enum intr_status intr_enable()
+{
+   enum intr_status old_status;
+   if (INTR_ON == intr_get_status())
+   {
+      old_status = INTR_ON;
+      return old_status;
+   }
+   else
+   {
+      old_status = INTR_OFF;
+      asm volatile("sti"); // 开中断,sti指令将IF位置1
+      return old_status;
+   }
+}
+
+/* 关中断,并且返回关中断前的状态 */
+enum intr_status intr_disable()
+{
+   enum intr_status old_status;
+   if (INTR_ON == intr_get_status())
+   {
+      old_status = INTR_ON;
+      asm volatile("cli" : : : "memory"); // 关中断,cli指令将IF位置0
+                                          // cli指令不会直接影响内存。然而，从一个更大的上下文来看，禁用中断可能会影响系统状态，
+                                          // 这个状态可能会被存储在内存中。所以改变位填 "memory" 是为了安全起见，确保编译器在生成代码时考虑到这一点。
+      return old_status;
+   }
+   else
+   {
+      old_status = INTR_OFF;
+      return old_status;
+   }
+}
+
+/* 将中断状态设置为status */
+enum intr_status intr_set_status(enum intr_status status)
+{
+   return status & INTR_ON ? intr_enable() : intr_disable(); // enable与disable函数会返回旧中断状态
+}
+
 
 // 此函数用于将传入的中断门描述符与中断处理函数建立映射，三个参数：中断门描述符地址，属性，中断处理函数地址
 static void make_idt_desc(struct gate_desc *p_gdesc, uint8_t attr, intr_handler function)

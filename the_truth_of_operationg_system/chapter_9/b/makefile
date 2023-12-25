@@ -1,8 +1,8 @@
 #定义一大堆变量，实质就是将需要多次重复用到的语句定义一个变量方便使用与替换
 BUILD_DIR=./build
 ENTRY_POINT=0xc0001500
-HD60M_PATH=/home/rlk/Desktop/bochs/hd60M.img
-#只需要把hd60m.img路径改成自己环境的路径，整个代码直接make all就完全写入了，能够运行成功
+HD120M_PATH=/home/xt/xtos/bochs/bin/hd120M.img
+#只需要把hd120m.img路径改成自己环境的路径，整个代码直接make all就完全写入了，能够运行成功
 AS=nasm
 CC=gcc-4.6
 LD=ld
@@ -77,9 +77,9 @@ mk_dir:
 #判断build文件夹是否存在，如果不存在，则创建
 
 hd:
-	dd if=build/mbr.o of=$(HD60M_PATH) count=1 bs=512 conv=notrunc && \
-	dd if=build/loader.o of=$(HD60M_PATH) count=4 bs=512 seek=2 conv=notrunc && \
-	dd if=$(BUILD_DIR)/kernel.bin of=$(HD60M_PATH) bs=512 count=200 seek=9 conv=notrunc
+	dd if=build/mbr.o of=$(HD120M_PATH) count=1 bs=512 conv=notrunc && \
+	dd if=build/loader.o of=$(HD120M_PATH) count=4 bs=512 seek=2 conv=notrunc && \
+	dd if=$(BUILD_DIR)/kernel.bin of=$(HD120M_PATH) bs=512 count=200 seek=9 conv=notrunc
 	
 clean:
 	@cd $(BUILD_DIR) && rm -f ./* && echo "remove ./build all done"

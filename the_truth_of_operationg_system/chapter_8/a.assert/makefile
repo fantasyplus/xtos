@@ -6,7 +6,7 @@ HD120M_PATH=/home/xt/xtos/bochs/bin/hd120M.img
 AS=nasm
 CC=gcc-4.6
 LD=ld
-LIB= -I lib/ -I lib/kernel/ -I lib/user/ -I kernel/ -I device/ -I thread/
+LIB= -I lib/ -I lib/kernel/ -I lib/user/ -I kernel/ -I device/
 ASFLAGS= -f elf
 CFLAGS= -Wall $(LIB) -c -fno-builtin -W -Wstrict-prototypes -Wmissing-prototypes -m32
 #-Wall warning all的意思，产生尽可能多警告信息，-fno-builtin不要采用内部函数，
@@ -19,8 +19,7 @@ LDFLAGS= -Ttext $(ENTRY_POINT) -e main -Map $(BUILD_DIR)/kernel.map -m elf_i386
 
 OBJS=$(BUILD_DIR)/main.o $(BUILD_DIR)/init.o \
 	$(BUILD_DIR)/interrupt.o $(BUILD_DIR)/timer.o $(BUILD_DIR)/kernel.o \
-	$(BUILD_DIR)/print.o $(BUILD_DIR)/debug.o $(BUILD_DIR)/string.o $(BUILD_DIR)/bitmap.o \
-	$(BUILD_DIR)/memory.o $(BUILD_DIR)/thread.o	$(BUILD_DIR)/list.o	$(BUILD_DIR)/switch.o
+	$(BUILD_DIR)/print.o $(BUILD_DIR)/debug.o
 #顺序最好是调用在前，实现在后
 
 ######################编译两个启动文件的代码#####################################
@@ -48,20 +47,6 @@ $(BUILD_DIR)/timer.o:device/timer.c
 $(BUILD_DIR)/debug.o:kernel/debug.c
 	$(CC) $(CFLAGS) -o $@ $<
 
-$(BUILD_DIR)/string.o:lib/string.c
-	$(CC) $(CFLAGS) -o $@ $<
-
-$(BUILD_DIR)/bitmap.o:lib/kernel/bitmap.c
-	$(CC) $(CFLAGS) -o $@ $<
-
-$(BUILD_DIR)/memory.o:kernel/memory.c
-	$(CC) $(CFLAGS) -o $@ $<
-
-$(BUILD_DIR)/thread.o:thread/thread.c
-	$(CC) $(CFLAGS) -o $@ $<
-
-$(BUILD_DIR)/list.o:lib/kernel/list.c
-	$(CC) $(CFLAGS) -o $@ $<
 ###################编译汇编内核代码#####################################################
 $(BUILD_DIR)/kernel.o:kernel/kernel.S 
 	$(AS) $(ASFLAGS) -o $@ $<
@@ -69,8 +54,6 @@ $(BUILD_DIR)/kernel.o:kernel/kernel.S
 $(BUILD_DIR)/print.o:lib/kernel/print.S
 	$(AS) $(ASFLAGS) -o $@ $<
 
-$(BUILD_DIR)/switch.o:thread/switch.S
-	$(AS) $(ASFLAGS) -o $@ $<
 ##################链接所有内核目标文件##################################################
 $(BUILD_DIR)/kernel.bin:$(OBJS)
 	$(LD) $(LDFLAGS) -o $@ $^

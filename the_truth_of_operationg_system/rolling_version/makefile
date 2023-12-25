@@ -1,8 +1,8 @@
 #定义一大堆变量，实质就是将需要多次重复用到的语句定义一个变量方便使用与替换
 BUILD_DIR=./build
 ENTRY_POINT=0xc0001500
-HD60M_PATH=/home/rlk/Desktop/bochs/hd60M.img
-#只需要把hd60m.img路径改成自己环境的路径，整个代码直接make all就完全写入了，能够运行成功
+HD120M_PATH=/home/xt/xtos/bochs/bin/hd120M.img
+#只需要把hd120m.img路径改成自己环境的路径，整个代码直接make all就完全写入了，能够运行成功
 AS=nasm
 CC=gcc-4.6
 LD=ld
@@ -12,6 +12,7 @@ CFLAGS= -Wall $(LIB) -c -fno-builtin -W -Wstrict-prototypes -Wmissing-prototypes
 #-Wall warning all的意思，产生尽可能多警告信息，-fno-builtin不要采用内部函数，
 #-W 会显示警告，但是只显示编译器认为会出现错误的警告
 #-Wstrict-prototypes 要求函数声明必须有参数类型，否则发出警告。-Wmissing-prototypes 必须要有函数声明，否则发出警告
+#-fno-builtin 告诉编译器不要采用内部函数，为了防止自定义函数与内部函数冲突
 
 LDFLAGS= -Ttext $(ENTRY_POINT) -e main -Map $(BUILD_DIR)/kernel.map -m elf_i386
 #-Map,生成map文件，就是通过编译器编译之后，生成的程序、数据及IO空间信息的一种映射文件
@@ -44,7 +45,7 @@ $(BUILD_DIR)/interrupt.o:kernel/interrupt.c
 $(BUILD_DIR)/timer.o:device/timer.c
 	$(CC) $(CFLAGS) -o $@ $<
 
-$(BUILD_DIR)/debug.o:kernel/debug.c
+$(BUILD_DIR)/debug.o:kernel/debug/debug.c
 	$(CC) $(CFLAGS) -o $@ $<
 
 ###################编译汇编内核代码#####################################################
@@ -65,9 +66,9 @@ mk_dir:
 #判断build文件夹是否存在，如果不存在，则创建
 
 hd:
-	dd if=build/mbr.o of=$(HD60M_PATH) count=1 bs=512 conv=notrunc && \
-	dd if=build/loader.o of=$(HD60M_PATH) count=4 bs=512 seek=2 conv=notrunc && \
-	dd if=$(BUILD_DIR)/kernel.bin of=$(HD60M_PATH) bs=512 count=200 seek=9 conv=notrunc
+	dd if=$(BUILD_DIR)/mbr.o of=$(HD120M_PATH) count=1 bs=512 conv=notrunc && \
+	dd if=$(BUILD_DIR)/loader.o of=$(HD120M_PATH) count=4 bs=512 seek=2 conv=notrunc && \
+	dd if=$(BUILD_DIR)/kernel.bin of=$(HD120M_PATH) bs=512 count=200 seek=9 conv=notrunc
 	
 clean:
 	@cd $(BUILD_DIR) && rm -f ./* && echo "remove ./build all done"

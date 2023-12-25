@@ -30,7 +30,7 @@
 00000000000i[     ]   SB16 support: no
 00000000000i[     ]   USB support: no
 00000000000i[     ]   VGA extension support: vbe
-00000000000i[MEM0 ] allocated memory at 0x7f5912f5a010. after alignment, vector=0x7f5912f5b000
+00000000000i[MEM0 ] allocated memory at 0x7f38dbd9f010. after alignment, vector=0x7f38dbda0000
 00000000000i[MEM0 ] 32.00MB
 00000000000i[MEM0 ] mem block size = 0x00100000, blocks=32
 00000000000i[MEM0 ] rom at 0xfffe0000/131072 ('/home/xt/xtos/bochs/share/bochs/BIOS-bochs-latest')
@@ -40,7 +40,7 @@
 00000000000i[DEV  ] PIIX3 PCI-to-ISA bridge present at device 1, function 0
 00000000000i[     ] init_dev of 'cmos' plugin device by virtual method
 00000000000i[CMOS ] Using local time for initial clock
-00000000000i[CMOS ] Setting initial clock to: Sun Dec 24 22:40:14 2023 (time0=1703486414)
+00000000000i[CMOS ] Setting initial clock to: Sun Dec 24 23:15:54 2023 (time0=1703488554)
 00000000000i[     ] init_dev of 'dma' plugin device by virtual method
 00000000000i[DMA  ] channel 4 used by cascade
 00000000000i[     ] init_dev of 'pic' plugin device by virtual method
@@ -67,7 +67,7 @@
 00000000000i[KBD  ] will paste characters every 400 keyboard ticks
 00000000000i[     ] init_dev of 'harddrv' plugin device by virtual method
 00000000000i[HD   ] HD on ata0-0: '/home/xt/xtos/bochs/bin/hd120M.img', 'flat' mode
-00000000000i[IMG  ] hd_size: 16048
+00000000000i[IMG  ] hd_size: 16348
 00000000000p[IMG  ] >>PANIC<< size of disk image must be multiple of 512 bytes
 00000000000i[HD   ] ata0-0: using specified geometry: CHS=243/16/63
 00000000000p[HD   ] >>PANIC<< ata0-0: specified geometry doesn't fit on disk image
@@ -45764,24 +45764,24 @@
 00018038403e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
 00018038407e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
 00018038415i[MEM0 ] allocate_block: block=0x1 used 0x3 of 0x20
-01082612000p[XGUI ] >>PANIC<< POWER button turned off.
-01082612000i[CPU0 ] CPU is in protected mode (active)
-01082612000i[CPU0 ] CS.mode = 32 bit
-01082612000i[CPU0 ] SS.mode = 32 bit
-01082612000i[CPU0 ] EFER   = 0x00000000
-01082612000i[CPU0 ] | EAX=40a00000  EBX=000700d4  ECX=00000000  EDX=00000000
-01082612000i[CPU0 ] | ESP=c009efe0  EBP=c009effc  ESI=00070000  EDI=00000000
-01082612000i[CPU0 ] | IOPL=0 id vip vif ac vm rf nt of df IF tf SF zf af pf cf
-01082612000i[CPU0 ] | SEG sltr(index|ti|rpl)     base    limit G D
-01082612000i[CPU0 ] |  CS:0008( 0001| 0|  0) 00000000 ffffffff 1 1
-01082612000i[CPU0 ] |  DS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
-01082612000i[CPU0 ] |  SS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
-01082612000i[CPU0 ] |  ES:0010( 0002| 0|  0) 00000000 ffffffff 1 1
-01082612000i[CPU0 ] |  FS:0000( 0000| 0|  0) 00000000 00000000 0 0
-01082612000i[CPU0 ] |  GS:0018( 0003| 0|  0) c00b8000 00007fff 1 1
-01082612000i[CPU0 ] | EIP=c000151b (c000151b)
-01082612000i[CPU0 ] | CR0=0xe0000011 CR2=0x00000000
-01082612000i[CPU0 ] | CR3=0x00100000 CR4=0x00000000
-01082612000i[CMOS ] Last time is 1703486684 (Sun Dec 24 22:44:44 2023)
-01082612000i[XGUI ] Exit
-01082612000i[CTRL ] quit_sim called with exit code 1
+00641276000p[XGUI ] >>PANIC<< POWER button turned off.
+00641276000i[CPU0 ] CPU is in protected mode (active)
+00641276000i[CPU0 ] CS.mode = 32 bit
+00641276000i[CPU0 ] SS.mode = 32 bit
+00641276000i[CPU0 ] EFER   = 0x00000000
+00641276000i[CPU0 ] | EAX=c000200d  EBX=000700d4  ECX=00000003  EDX=00000040
+00641276000i[CPU0 ] | ESP=c009efc0  EBP=c009efd8  ESI=00070000  EDI=00000000
+00641276000i[CPU0 ] | IOPL=0 id vip vif ac vm rf nt of df if tf sf ZF af PF cf
+00641276000i[CPU0 ] | SEG sltr(index|ti|rpl)     base    limit G D
+00641276000i[CPU0 ] |  CS:0008( 0001| 0|  0) 00000000 ffffffff 1 1
+00641276000i[CPU0 ] |  DS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
+00641276000i[CPU0 ] |  SS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
+00641276000i[CPU0 ] |  ES:0010( 0002| 0|  0) 00000000 ffffffff 1 1
+00641276000i[CPU0 ] |  FS:0000( 0005| 0|  0) 00000000 0000ffff 0 0
+00641276000i[CPU0 ] |  GS:0018( 0003| 0|  0) c00b8000 00007fff 1 1
+00641276000i[CPU0 ] | EIP=c0001fb1 (c0001fb1)
+00641276000i[CPU0 ] | CR0=0xe0000011 CR2=0x00000000
+00641276000i[CPU0 ] | CR3=0x00100000 CR4=0x00000000
+00641276000i[CMOS ] Last time is 1703488714 (Sun Dec 24 23:18:34 2023)
+00641276000i[XGUI ] Exit
+00641276000i[CTRL ] quit_sim called with exit code 1
