@@ -2,8 +2,11 @@
 Allocating common symbols
 Common symbol       size              file
 
+user_pool           0x10              build/memory.o
 intr_name           0x84              build/interrupt.o
+kernel_vaddr        0xc               build/memory.o
 idt_table           0x84              build/interrupt.o
+kernel_pool         0x10              build/memory.o
 
 Discarded input sections
 
@@ -19,6 +22,10 @@ Discarded input sections
                 0x0000000000000000        0x0 build/debug.o
  .note.GNU-stack
                 0x0000000000000000        0x0 build/string.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/bitmap.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/memory.o
 
 Memory Configuration
 
@@ -36,6 +43,8 @@ LOAD build/kernel.o
 LOAD build/print.o
 LOAD build/debug.o
 LOAD build/string.o
+LOAD build/bitmap.o
+LOAD build/memory.o
                 [!provide]                        PROVIDE (__executable_start = SEGMENT_START ("text-segment", 0x8048000))
                 0x00000000080480d4                . = (SEGMENT_START ("text-segment", 0x8048000) + SIZEOF_HEADERS)
 
@@ -105,7 +114,7 @@ LOAD build/string.o
 .plt.sec
  *(.plt.sec)
 
-.text           0x00000000c0001500      0xf17
+.text           0x00000000c0001500     0x12ed
  *(.text.unlikely .text.*_unlikely .text.unlikely.*)
  *(.text.exit .text.exit.*)
  *(.text.startup .text.startup.*)
@@ -114,17 +123,17 @@ LOAD build/string.o
  *(.text .stub .text.* .gnu.linkonce.t.*)
  .text          0x00000000c0001500       0x4c build/main.o
                 0x00000000c0001500                main
- .text          0x00000000c000154c       0x1e build/init.o
+ .text          0x00000000c000154c       0x23 build/init.o
                 0x00000000c000154c                init_all
- .text          0x00000000c000156a      0x3b7 build/interrupt.o
-                0x00000000c0001664                intr_get_status
-                0x00000000c000168d                intr_enable
-                0x00000000c00016b6                intr_disable
-                0x00000000c00016df                intr_set_status
-                0x00000000c00018c3                idt_init
- .text          0x00000000c0001921      0x100 build/timer.o
-                0x00000000c00019d5                timer_init
- *fill*         0x00000000c0001a21        0xf 
+ .text          0x00000000c000156f      0x3b7 build/interrupt.o
+                0x00000000c0001669                intr_get_status
+                0x00000000c0001692                intr_enable
+                0x00000000c00016bb                intr_disable
+                0x00000000c00016e4                intr_set_status
+                0x00000000c00018c8                idt_init
+ .text          0x00000000c0001926      0x100 build/timer.o
+                0x00000000c00019da                timer_init
+ *fill*         0x00000000c0001a26        0xa 
  .text          0x00000000c0001a30      0x393 build/kernel.o
                 0x00000000c0001a30                intr_exit
  *fill*         0x00000000c0001dc3        0xd 
@@ -145,6 +154,13 @@ LOAD build/string.o
                 0x00000000c00022c5                strrchr
                 0x00000000c000232e                strcat
                 0x00000000c00023aa                strchrs
+ .text          0x00000000c0002417      0x1f6 build/bitmap.o
+                0x00000000c0002417                bitmap_init
+                0x00000000c000243e                bitmap_scan_test
+                0x00000000c0002480                bitmap_scan
+                0x00000000c000254e                bitmap_set
+ .text          0x00000000c000260d      0x1e0 build/memory.o
+                0x00000000c00027b8                mem_init
  *(.gnu.warning)
 
 .fini
@@ -155,7 +171,7 @@ LOAD build/string.o
                 0x00000000c0003000                . = ALIGN (CONSTANT (MAXPAGESIZE))
                 0x00000000c0003000                . = SEGMENT_START ("rodata-segment", (ALIGN (CONSTANT (MAXPAGESIZE)) + (. & (CONSTANT (MAXPAGESIZE) - 0x1))))
 
-.rodata         0x00000000c0003000      0x3a0
+.rodata         0x00000000c0003000      0x4a2
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata        0x00000000c0003000       0x15 build/main.o
  .rodata        0x00000000c0003015        0xa build/init.o
@@ -164,6 +180,8 @@ LOAD build/string.o
  .rodata        0x00000000c0003285       0x23 build/timer.o
  .rodata        0x00000000c00032a8       0x3f build/debug.o
  .rodata        0x00000000c00032e7       0xb9 build/string.o
+ .rodata        0x00000000c00033a0       0x3c build/bitmap.o
+ .rodata        0x00000000c00033dc       0xc6 build/memory.o
 
 .rodata1
  *(.rodata1)
@@ -172,19 +190,23 @@ LOAD build/string.o
  *(.eh_frame_hdr)
  *(.eh_frame_entry .eh_frame_entry.*)
 
-.eh_frame       0x00000000c00033a0      0x384
+.eh_frame       0x00000000c00034a4      0x458
  *(.eh_frame)
- .eh_frame      0x00000000c00033a0       0x34 build/main.o
- .eh_frame      0x00000000c00033d4       0x20 build/init.o
+ .eh_frame      0x00000000c00034a4       0x34 build/main.o
+ .eh_frame      0x00000000c00034d8       0x20 build/init.o
                                          0x38 (size before relaxing)
- .eh_frame      0x00000000c00033f4      0x16c build/interrupt.o
+ .eh_frame      0x00000000c00034f8      0x16c build/interrupt.o
                                         0x184 (size before relaxing)
- .eh_frame      0x00000000c0003560       0x68 build/timer.o
+ .eh_frame      0x00000000c0003664       0x68 build/timer.o
                                          0x80 (size before relaxing)
- .eh_frame      0x00000000c00035c8       0x1c build/debug.o
+ .eh_frame      0x00000000c00036cc       0x1c build/debug.o
                                          0x34 (size before relaxing)
- .eh_frame      0x00000000c00035e4      0x140 build/string.o
+ .eh_frame      0x00000000c00036e8      0x140 build/string.o
                                         0x158 (size before relaxing)
+ .eh_frame      0x00000000c0003828       0x94 build/bitmap.o
+                                         0xac (size before relaxing)
+ .eh_frame      0x00000000c00038bc       0x40 build/memory.o
+                                         0x58 (size before relaxing)
  *(.eh_frame.*)
 
 .gcc_except_table
@@ -282,6 +304,8 @@ LOAD build/string.o
  .data          0x00000000c0005084        0x8 build/print.o
  .data          0x00000000c000508c        0x0 build/debug.o
  .data          0x00000000c000508c        0x0 build/string.o
+ .data          0x00000000c000508c        0x0 build/bitmap.o
+ .data          0x00000000c000508c        0x0 build/memory.o
 
 .data1
  *(.data1)
@@ -290,7 +314,7 @@ LOAD build/string.o
                 0x00000000c000508c                . = .
                 0x00000000c000508c                __bss_start = .
 
-.bss            0x00000000c00050a0      0x244
+.bss            0x00000000c00050a0      0x270
  *(.dynbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
  .bss           0x00000000c00050a0        0x0 build/main.o
@@ -299,18 +323,24 @@ LOAD build/string.o
  .bss           0x00000000c00051a8        0x0 build/timer.o
  .bss           0x00000000c00051a8        0x0 build/debug.o
  .bss           0x00000000c00051a8        0x0 build/string.o
+ .bss           0x00000000c00051a8        0x0 build/bitmap.o
+ .bss           0x00000000c00051a8        0x0 build/memory.o
  *(COMMON)
  *fill*         0x00000000c00051a8       0x18 
  COMMON         0x00000000c00051c0      0x124 build/interrupt.o
                 0x00000000c00051c0                intr_name
                 0x00000000c0005260                idt_table
-                0x00000000c00052e4                . = ALIGN ((. != 0x0)?0x4:0x1)
-                0x00000000c00052e4                . = ALIGN (0x4)
-                0x00000000c00052e4                . = SEGMENT_START ("ldata-segment", .)
-                0x00000000c00052e4                . = ALIGN (0x4)
-                0x00000000c00052e4                _end = .
+ COMMON         0x00000000c00052e4       0x2c build/memory.o
+                0x00000000c00052e4                user_pool
+                0x00000000c00052f4                kernel_vaddr
+                0x00000000c0005300                kernel_pool
+                0x00000000c0005310                . = ALIGN ((. != 0x0)?0x4:0x1)
+                0x00000000c0005310                . = ALIGN (0x4)
+                0x00000000c0005310                . = SEGMENT_START ("ldata-segment", .)
+                0x00000000c0005310                . = ALIGN (0x4)
+                0x00000000c0005310                _end = .
                 [!provide]                        PROVIDE (end = .)
-                0x00000000c00052e4                . = DATA_SEGMENT_END (.)
+                0x00000000c0005310                . = DATA_SEGMENT_END (.)
 
 .stab
  *(.stab)
@@ -339,6 +369,8 @@ LOAD build/string.o
  .comment       0x000000000000002a       0x2b build/timer.o
  .comment       0x000000000000002a       0x2b build/debug.o
  .comment       0x000000000000002a       0x2b build/string.o
+ .comment       0x000000000000002a       0x2b build/bitmap.o
+ .comment       0x000000000000002a       0x2b build/memory.o
 
 .gnu.build.attributes
  *(.gnu.build.attributes .gnu.build.attributes.*)

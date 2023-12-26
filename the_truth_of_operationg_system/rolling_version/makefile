@@ -1,12 +1,12 @@
 #定义一大堆变量，实质就是将需要多次重复用到的语句定义一个变量方便使用与替换
 BUILD_DIR=./build
 ENTRY_POINT=0xc0001500
-HD120M_PATH=/home/xt/xtos/bochs/bin/hd120M.img
+HD120M_PATH=../../bochs/bin/hd120M.img
 #只需要把hd120m.img路径改成自己环境的路径，整个代码直接make all就完全写入了，能够运行成功
 AS=nasm
 CC=gcc-4.6
 LD=ld
-LIB= -I lib/ -I lib/kernel/ -I lib/user/ -I kernel/ -I device/
+LIB= -I lib/ -I lib/kernel/ -I lib/user/ -I kernel/ -I device/ -I kernel/debug
 ASFLAGS= -f elf
 CFLAGS= -Wall $(LIB) -c -fno-builtin -W -Wstrict-prototypes -Wmissing-prototypes -m32
 #-Wall warning all的意思，产生尽可能多警告信息，-fno-builtin不要采用内部函数，
@@ -20,7 +20,8 @@ LDFLAGS= -Ttext $(ENTRY_POINT) -e main -Map $(BUILD_DIR)/kernel.map -m elf_i386
 
 OBJS=$(BUILD_DIR)/main.o $(BUILD_DIR)/init.o \
 	$(BUILD_DIR)/interrupt.o $(BUILD_DIR)/timer.o $(BUILD_DIR)/kernel.o \
-	$(BUILD_DIR)/print.o $(BUILD_DIR)/debug.o $(BUILD_DIR)/string.o
+	$(BUILD_DIR)/print.o $(BUILD_DIR)/debug.o $(BUILD_DIR)/string.o   \
+	$(BUILD_DIR)/bitmap.o $(BUILD_DIR)/memory.o
 #顺序最好是调用在前，实现在后
 
 ######################编译两个启动文件的代码#####################################
@@ -51,6 +52,12 @@ $(BUILD_DIR)/debug.o:kernel/debug/debug.c
 $(BUILD_DIR)/string.o:lib/string.c
 	$(CC) $(CFLAGS) -o $@ $<
 
+$(BUILD_DIR)/bitmap.o:lib/kernel/bitmap.c
+	$(CC) $(CFLAGS) -o $@ $<
+
+$(BUILD_DIR)/memory.o:kernel/memory.c
+	$(CC) $(CFLAGS) -o $@ $<
+
 ###################编译汇编内核代码#####################################################
 $(BUILD_DIR)/kernel.o:kernel/kernel.S 
 	$(AS) $(ASFLAGS) -o $@ $<
@@ -78,7 +85,6 @@ clean:
 #-f, --force忽略不存在的文件，从不给出提示，执行make clean就会删除build下所有文件
 
 build:$(BUILD_DIR)/kernel.bin
-	
 #执行build需要依赖kernel.bin，但是一开始没有，就会递归执行之前写好的语句编译kernel.bin
 
 all:mk_dir boot build hd
