@@ -2,16 +2,17 @@
 #include "init.h"
 #include "debug/debug.h"
 #include "../lib/string.h"
+#include "memory.h"
 
 int main(void)
 {
    put_str("I am kernel\n");
    init_all();
-   // ASSERT(123123<0);
-   char *a = "123";
-   char *b = "abc";
-   strcat(a, b);
-   put_str(a);
+
+   void* addr = get_kernel_pages(3);
+   put_str("\n get_kernel_page start vaddr is ");
+   put_int((uint32_t)addr);
+   put_str("\n");
 
    while (1)
       ;

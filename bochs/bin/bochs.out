@@ -30,7 +30,7 @@
 00000000000i[     ]   SB16 support: no
 00000000000i[     ]   USB support: no
 00000000000i[     ]   VGA extension support: vbe
-00000000000i[MEM0 ] allocated memory at 0x7f7778630010. after alignment, vector=0x7f7778631000
+00000000000i[MEM0 ] allocated memory at 0x7f7350792010. after alignment, vector=0x7f7350793000
 00000000000i[MEM0 ] 32.00MB
 00000000000i[MEM0 ] mem block size = 0x00100000, blocks=32
 00000000000i[MEM0 ] rom at 0xfffe0000/131072 ('/home/xt/xtos/bochs/share/bochs/BIOS-bochs-latest')
@@ -40,7 +40,7 @@
 00000000000i[DEV  ] PIIX3 PCI-to-ISA bridge present at device 1, function 0
 00000000000i[     ] init_dev of 'cmos' plugin device by virtual method
 00000000000i[CMOS ] Using local time for initial clock
-00000000000i[CMOS ] Setting initial clock to: Mon Dec 25 18:58:10 2023 (time0=1703559490)
+00000000000i[CMOS ] Setting initial clock to: Tue Dec 26 23:02:23 2023 (time0=1703660543)
 00000000000i[     ] init_dev of 'dma' plugin device by virtual method
 00000000000i[DMA  ] channel 4 used by cascade
 00000000000i[     ] init_dev of 'pic' plugin device by virtual method
@@ -67,7 +67,7 @@
 00000000000i[KBD  ] will paste characters every 400 keyboard ticks
 00000000000i[     ] init_dev of 'harddrv' plugin device by virtual method
 00000000000i[HD   ] HD on ata0-0: '/home/xt/xtos/bochs/bin/hd120M.img', 'flat' mode
-00000000000i[IMG  ] hd_size: 21292
+00000000000i[IMG  ] hd_size: 21516
 00000000000p[IMG  ] >>PANIC<< size of disk image must be multiple of 512 bytes
 00000000000i[HD   ] ata0-0: using specified geometry: CHS=243/16/63
 00000000000p[HD   ] >>PANIC<< ata0-0: specified geometry doesn't fit on disk image
@@ -193,264 +193,8 @@
 00001871695i[BIOS ] ata0-0: PCHS=243/16/63 translation=none LCHS=243/16/63
 00005748869i[BIOS ] IDE time out
 00017824347i[BIOS ] Booting from 0000:7c00
-00017866375e[HD   ] calc_log_addr: out of bounds (41/41)
-00017866375e[HD   ] ide_read_sector() reached invalid sector 0, aborting
-00017866379e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866383e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866387e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866391e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866395e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866399e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866403e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866407e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866411e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866415e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866419e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866423e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866427e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866431e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866435e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866439e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866443e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866447e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866451e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866455e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866459e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866463e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866467e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866471e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866475e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866479e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866483e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866487e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866491e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866495e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866499e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866503e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866507e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866511e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866515e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866519e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866523e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866527e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866531e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866535e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866539e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866543e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866547e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866551e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866555e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866559e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866563e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866567e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866571e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866575e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866579e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866583e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866587e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866591e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866595e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866599e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866603e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866607e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866611e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866615e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866619e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866623e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866627e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866631e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866635e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866639e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866643e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866647e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866651e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866655e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866659e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866663e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866667e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866671e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866675e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866679e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866683e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866687e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866691e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866695e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866699e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866703e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866707e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866711e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866715e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866719e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866723e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866727e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866731e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866735e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866739e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866743e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866747e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866751e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866755e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866759e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866763e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866767e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866771e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866775e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866779e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866783e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866787e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866791e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866795e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866799e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866803e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866807e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866811e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866815e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866819e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866823e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866827e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866831e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866835e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866839e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866843e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866847e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866851e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866855e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866859e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866863e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866867e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866871e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866875e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866879e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866883e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866887e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866891e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866895e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866899e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866903e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866907e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866911e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866915e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866919e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866923e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866927e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866931e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866935e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866939e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866943e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866947e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866951e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866955e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866959e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866963e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866967e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866971e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866975e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866979e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866983e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866987e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866991e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866995e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017866999e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867003e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867007e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867011e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867015e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867019e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867023e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867027e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867031e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867035e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867039e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867043e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867047e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867051e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867055e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867059e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867063e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867067e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867071e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867075e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867079e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867083e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867087e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867091e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867095e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867099e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867103e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867107e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867111e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867115e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867119e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867123e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867127e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867131e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867135e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867139e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867143e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867147e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867151e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867155e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867159e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867163e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867167e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867171e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867175e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867179e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867183e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867187e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867191e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867195e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867199e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867203e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867207e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867211e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867215e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867219e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867223e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867227e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867231e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867235e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867239e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867243e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867247e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867251e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867255e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867259e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867263e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867267e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867271e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867275e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867279e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867283e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867287e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867291e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867295e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867299e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867303e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867307e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867311e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867315e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867319e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867323e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867327e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867331e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867335e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867339e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867343e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867347e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867351e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867355e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867359e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867363e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867367e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867371e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867375e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867379e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867383e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867387e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867391e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867395e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
-00017867399e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
+00017867399e[HD   ] calc_log_addr: out of bounds (42/42)
+00017867399e[HD   ] ide_read_sector() reached invalid sector 0, aborting
 00017867403e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
 00017867407e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
 00017867411e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
@@ -43204,24 +42948,7 @@
 00018038403e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
 00018038407e[HD   ] IO read(0x01f0) with drq == 0: last command was 00h
 00018038415i[MEM0 ] allocate_block: block=0x1 used 0x3 of 0x20
-02847080000p[XGUI ] >>PANIC<< POWER button turned off.
-02847080000i[CPU0 ] CPU is in protected mode (active)
-02847080000i[CPU0 ] CS.mode = 32 bit
-02847080000i[CPU0 ] SS.mode = 32 bit
-02847080000i[CPU0 ] EFER   = 0x00000000
-02847080000i[CPU0 ] | EAX=c000300d  EBX=000700d4  ECX=00000f00  EDX=00000000
-02847080000i[CPU0 ] | ESP=c009efd0  EBP=c009effc  ESI=00070000  EDI=00000000
-02847080000i[CPU0 ] | IOPL=0 id vip vif ac vm rf nt of df if tf sf ZF af PF cf
-02847080000i[CPU0 ] | SEG sltr(index|ti|rpl)     base    limit G D
-02847080000i[CPU0 ] |  CS:0008( 0001| 0|  0) 00000000 ffffffff 1 1
-02847080000i[CPU0 ] |  DS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
-02847080000i[CPU0 ] |  SS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
-02847080000i[CPU0 ] |  ES:0010( 0002| 0|  0) 00000000 ffffffff 1 1
-02847080000i[CPU0 ] |  FS:0000( 0005| 0|  0) 00000000 0000ffff 0 0
-02847080000i[CPU0 ] |  GS:0018( 0003| 0|  0) c00b8000 00007fff 1 1
-02847080000i[CPU0 ] | EIP=c000154a (c000154a)
-02847080000i[CPU0 ] | CR0=0xe0000011 CR2=0x00000000
-02847080000i[CPU0 ] | CR3=0x00100000 CR4=0x00000000
-02847080000i[CMOS ] Last time is 1703560201 (Mon Dec 25 19:10:01 2023)
-02847080000i[XGUI ] Exit
-02847080000i[CTRL ] quit_sim called with exit code 1
+00018105957i[MEM0 ] allocate_block: block=0x2 used 0x4 of 0x20
+04758879720i[     ] Ctrl-C detected in signal handler.
+04758879721i[XGUI ] Mouse capture off
+04758879721i[XGUI ] Mouse capture off
