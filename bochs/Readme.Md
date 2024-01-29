@@ -1,4 +1,4 @@
-## 编译步骤
+## 编译步骤(注意改prefix路径)
 ### configure
 ```
 ./configure \

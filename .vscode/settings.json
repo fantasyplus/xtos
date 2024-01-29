@@ -8,5 +8,13 @@
         "bitmap.h": "c",
         "memory.h": "c"
     },
-    "C_Cpp.errorSquiggles": "disabled"
+    "C_Cpp.errorSquiggles": "disabled",
+    "workbench.colorCustomizations": {
+        "tab.activeBorder": "#6e5c48",
+        "titleBar.activeBackground": "#503e2a",
+        "titleBar.activeForeground": "#fff",
+        "titleBar.inactiveBackground": "#503e2a",
+        "titleBar.inactiveForeground": "#fff"
+    },
+    "coralize.color": "#503e2a"
 }
