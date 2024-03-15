@@ -10,11 +10,11 @@
     },
     "C_Cpp.errorSquiggles": "disabled",
     "workbench.colorCustomizations": {
-        "tab.activeBorder": "#6e5c48",
-        "titleBar.activeBackground": "#503e2a",
-        "titleBar.activeForeground": "#fff",
-        "titleBar.inactiveBackground": "#503e2a",
-        "titleBar.inactiveForeground": "#fff"
+        "tab.activeBorder": "#7fcaa3",
+        "titleBar.activeBackground": "#61ac85",
+        "titleBar.activeForeground": "#000",
+        "titleBar.inactiveBackground": "#61ac85",
+        "titleBar.inactiveForeground": "#000"
     },
-    "coralize.color": "#503e2a"
+    "coralize.color": "#61ac85"
 }

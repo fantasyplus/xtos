@@ -19,7 +19,7 @@
 
 .SUFFIXES: .cc
 
-prefix          = /home/web/xtos/bochs
+prefix          = /home/xt/xtos/bochs
 exec_prefix     = ${prefix}
 srcdir          = .
 
@@ -36,13 +36,13 @@ top_srcdir      = ..
 
 SHELL = /bin/bash
 
-
+MAKE=make
 
 CXX = g++
 CXXFLAGS = $(BX_INCDIRS) -g -O2 -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES   $(X_CFLAGS)
-LOCAL_CXXFLAGS = -pthread -I/usr/include/gtk-2.0 -I/usr/lib/x86_64-linux-gnu/gtk-2.0/include -I/usr/include/pango-1.0 -I/usr/include/atk-1.0 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/pango-1.0 -I/usr/include/fribidi -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/harfbuzz -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/uuid -I/usr/include/freetype2 -I/usr/include/libpng16
+LOCAL_CXXFLAGS = 
 LDFLAGS = 
-LIBS =  -lm -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lharfbuzz -lfontconfig -lfreetype
+LIBS =  -lm 
 X_CFLAGS = 
 RANLIB = ranlib
 PLUGIN_PATH=${exec_prefix}/lib
@@ -66,7 +66,7 @@ GUI_OBJS_WX_SUPPORT = wxmain.o wxdialog.o
 OBJS_THAT_CANNOT_BE_PLUGINS = keymap.o gui.o siminterface.o paramtree.o textconfig.o enh_dbg.o gtk_enh_dbg_osdep.o 
 OBJS_THAT_CAN_BE_PLUGINS = 
 
-X_LIBS = -lX11 -lXpm -lXrandr
+X_LIBS =   -lXrandr
 X_PRE_LIBS = 
 GUI_LINK_OPTS_X = $(X_LIBS) $(X_PRE_LIBS)
 GUI_LINK_OPTS_SDL = `sdl-config --cflags --libs`

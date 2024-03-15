@@ -7,7 +7,7 @@
 #
 ###################################################################
 
-prefix          = /home/web/xtos/bochs
+prefix          = /home/xt/xtos/bochs
 srcdir          = .
 docdir          = $(prefix)/share/doc/bochs
 DOCBOOK2HTML = not_found
