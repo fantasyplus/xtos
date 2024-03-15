@@ -102,6 +102,8 @@ static void *vaddr_get(enum pool_flags pf, uint32_t pg_cnt)
    uint32_t cnt = 0;
    if (pf == PF_KERNEL)
    {
+      put_str("\n vaddr_get pg_cnt:");
+      put_int(pg_cnt);
       bit_idx_start = bitmap_scan(&kernel_vaddr.vaddr_bitmap, pg_cnt);
       if (bit_idx_start == -1)
       {
@@ -111,6 +113,10 @@ static void *vaddr_get(enum pool_flags pf, uint32_t pg_cnt)
       {
          bitmap_set(&kernel_vaddr.vaddr_bitmap, bit_idx_start + cnt++, 1);
       }
+      put_str("\nbit_idx_start is ");
+      put_int(bit_idx_start);
+      put_str("\n kernel_vaddr.vaddr_start is");
+      put_int(kernel_vaddr.vaddr_start);
       vaddr_start = kernel_vaddr.vaddr_start + bit_idx_start * PG_SIZE; // 位图中每一位管理4kb大小的内存，也就是一页
    }
    else
@@ -230,7 +236,8 @@ void *malloc_page(enum pool_flags pf, uint32_t pg_cnt)
    {
       void *page_phyaddr = palloc(mem_pool);
       if (page_phyaddr == NULL)
-      { // 失败时要将曾经已申请的虚拟地址和物理页全部回滚，在将来完成内存回收时再补充
+      { 
+         // 失败时要将曾经已申请的虚拟地址和物理页全部回滚，在将来完成内存回收时再补充
          return NULL;
       }
       page_table_add((void *)vaddr, page_phyaddr); // 在页表中做映射

@@ -19,7 +19,7 @@
 
 .SUFFIXES: .cc
 
-prefix          = /home/web/xtos/bochs
+prefix          = /home/xt/xtos/bochs
 exec_prefix     = ${prefix}
 srcdir          = .
 
