@@ -24,14 +24,19 @@ top_srcdir      = ..
 
 SHELL = /bin/bash
 
-
+MAKE=make
 
 CXX = g++
 CXXFLAGS = -g -O2 -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES  $(X_CFLAGS)
 
 LDFLAGS = 
+<<<<<<< HEAD
 LIBS =  -lm -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lharfbuzz -lfontconfig -lfreetype
 X_LIBS = -lX11  -lXrandr
+=======
+LIBS =  -lm 
+X_LIBS =   -lXrandr
+>>>>>>> 15de0685c4194ac710ea113adcd2ae2c7d4e0f09
 X_PRE_LIBS = 
 RANLIB = ranlib
 

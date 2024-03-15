@@ -3,7 +3,10 @@
 ### depends
 ```
 sudo apt-get install libgtk2.0-dev
+<<<<<<< HEAD:bochs/Readme.md
 sudo apt-get install gnome-devel
+=======
+>>>>>>> 15de0685c4194ac710ea113adcd2ae2c7d4e0f09:bochs/Readme.Md
 ```
 
 ### configure

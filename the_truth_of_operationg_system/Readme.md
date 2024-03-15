@@ -10,9 +10,12 @@ deb http://security.ubuntu.com/ubuntu trusty-security main restricted universe m
 
 sudo apt update
 sudo apt install gcc-4.6
+<<<<<<< HEAD
 ```
 
 - nasm安装
 ```
 sudo apt install nasm
+=======
+>>>>>>> 15de0685c4194ac710ea113adcd2ae2c7d4e0f09
 ```

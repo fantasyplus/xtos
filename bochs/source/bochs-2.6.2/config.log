@@ -158,7 +158,7 @@ configure:4315: g++ -c -g  conftest.cpp >&5
 configure:4315: $? = 0
 configure:4356: result: yes
 configure:4379: checking whether make sets $(MAKE)
-configure:4401: result: yes
+configure:4405: result: no
 configure:4487: checking for a sed that does not truncate output
 configure:4541: result: /usr/bin/sed
 configure:4544: checking for grep that handles long lines and -e
@@ -473,7 +473,11 @@ configure:8563: checking whether stripping libraries is possible
 configure:8568: result: yes
 configure:8666: checking for shl_load
 configure:8666: gcc -o conftest -g -O2   conftest.c  >&5
+<<<<<<< HEAD
 /usr/bin/ld: /tmp/ccLdyyTJ.o: in function `main':
+=======
+/usr/bin/ld: /tmp/ccLTmJTB.o: in function `main':
+>>>>>>> 15de0685c4194ac710ea113adcd2ae2c7d4e0f09
 /home/xt/xtos/bochs/source/bochs-2.6.2/conftest.c:54: undefined reference to `shl_load'
 collect2: error: ld returned 1 exit status
 configure:8666: $? = 1
@@ -579,7 +583,11 @@ configure: failed program was:
 configure:8704: result: no
 configure:8709: checking for dlopen
 configure:8709: gcc -o conftest -g -O2   conftest.c  >&5
+<<<<<<< HEAD
 /usr/bin/ld: /tmp/cckCOBgO.o: in function `main':
+=======
+/usr/bin/ld: /tmp/ccYjtjFI.o: in function `main':
+>>>>>>> 15de0685c4194ac710ea113adcd2ae2c7d4e0f09
 /home/xt/xtos/bochs/source/bochs-2.6.2/conftest.c:54: undefined reference to `dlopen'
 collect2: error: ld returned 1 exit status
 configure:8709: $? = 1
@@ -1840,7 +1848,11 @@ configure:8377: $? = 0
 configure:8377: result: yes
 configure:8389: checking for strrev
 configure:8389: gcc -o conftest -g -O2   conftest.c  >&5
+<<<<<<< HEAD
 /usr/bin/ld: /tmp/cci7CA40.o: in function `main':
+=======
+/usr/bin/ld: /tmp/ccCb9fqN.o: in function `main':
+>>>>>>> 15de0685c4194ac710ea113adcd2ae2c7d4e0f09
 /home/xt/xtos/bochs/source/bochs-2.6.2/conftest.c:109: undefined reference to `strrev'
 collect2: error: ld returned 1 exit status
 configure:8389: $? = 1
@@ -1960,7 +1972,11 @@ configure: failed program was:
 configure:8389: result: no
 configure:8401: checking for stricmp
 configure:8401: gcc -o conftest -g -O2   conftest.c  >&5
+<<<<<<< HEAD
 /usr/bin/ld: /tmp/ccCEhXc7.o: in function `main':
+=======
+/usr/bin/ld: /tmp/cc5xY4bR.o: in function `main':
+>>>>>>> 15de0685c4194ac710ea113adcd2ae2c7d4e0f09
 /home/xt/xtos/bochs/source/bochs-2.6.2/conftest.c:109: undefined reference to `stricmp'
 collect2: error: ld returned 1 exit status
 configure:8401: $? = 1
@@ -2121,7 +2137,11 @@ configure:8531: $? = 0
 configure:8531: result: yes
 configure:8543: checking for fseek64
 configure:8543: gcc -o conftest -g -O2   conftest.c  >&5
+<<<<<<< HEAD
 /usr/bin/ld: /tmp/ccGwlCs0.o: in function `main':
+=======
+/usr/bin/ld: /tmp/cczGHQcK.o: in function `main':
+>>>>>>> 15de0685c4194ac710ea113adcd2ae2c7d4e0f09
 /home/xt/xtos/bochs/source/bochs-2.6.2/conftest.c:122: undefined reference to `fseek64'
 collect2: error: ld returned 1 exit status
 configure:8543: $? = 1
@@ -2530,7 +2550,11 @@ conftest.c:127:6: warning: conflicting types for built-in function 'cos'; expect
 conftest.c:115:1: note: 'cos' is declared in header '<math.h>'
   114 | # include <limits.h>
   115 | #else
+<<<<<<< HEAD
 /usr/bin/ld: /tmp/ccnUiBQc.o: in function `main':
+=======
+/usr/bin/ld: /tmp/ccvgkG22.o: in function `main':
+>>>>>>> 15de0685c4194ac710ea113adcd2ae2c7d4e0f09
 /home/xt/xtos/bochs/source/bochs-2.6.2/conftest.c:138: undefined reference to `cos'
 collect2: error: ld returned 1 exit status
 configure:8805: $? = 1
@@ -2685,7 +2709,11 @@ conftest.c:127:6: warning: conflicting types for built-in function 'floor'; expe
 conftest.c:115:1: note: 'floor' is declared in header '<math.h>'
   114 | # include <limits.h>
   115 | #else
+<<<<<<< HEAD
 /usr/bin/ld: /tmp/ccldyj9f.o: in function `main':
+=======
+/usr/bin/ld: /tmp/cctmfrM2.o: in function `main':
+>>>>>>> 15de0685c4194ac710ea113adcd2ae2c7d4e0f09
 /home/xt/xtos/bochs/source/bochs-2.6.2/conftest.c:138: undefined reference to `floor'
 collect2: error: ld returned 1 exit status
 configure:8816: $? = 1
@@ -4604,7 +4632,7 @@ configure:12696: result: yes
 configure:12696: checking for pthread.h
 configure:12696: result: yes
 configure:12809: checking for the pthreads library -lpthreads
-configure:12842: gcc -o conftest -g -O2 -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES   -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES  conftest.c -lpthreads  -lm -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lharfbuzz -lfontconfig -lfreetype >&5
+configure:12842: gcc -o conftest -g -O2 -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES   -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES  conftest.c -lpthreads  -lm  >&5
 conftest.c: In function 'main':
 conftest.c:163:8: warning: null argument where non-null required (argument 1) [-Wnonnull]
   163 |        pthread_attr_init(0); pthread_cleanup_push(0, 0);
@@ -4786,7 +4814,7 @@ configure: failed program was:
 | }
 configure:12851: result: no
 configure:12798: checking whether pthreads work without any flags
-configure:12842: gcc -o conftest -g -O2 -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES   -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES  conftest.c   -lm -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lharfbuzz -lfontconfig -lfreetype >&5
+configure:12842: gcc -o conftest -g -O2 -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES   -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES  conftest.c   -lm  >&5
 conftest.c: In function 'main':
 conftest.c:163:8: warning: null argument where non-null required (argument 1) [-Wnonnull]
   163 |        pthread_attr_init(0); pthread_cleanup_push(0, 0);
@@ -4795,7 +4823,11 @@ conftest.c:164:8: warning: null argument where non-null required (argument 1) [-
   164 |        pthread_create(0,0,0,0); pthread_cleanup_pop(0);
       |        ^~~~~~~~~~~~~~
 conftest.c:164:8: warning: null argument where non-null required (argument 3) [-Wnonnull]
+<<<<<<< HEAD
 /usr/bin/ld: /tmp/ccNPIDKs.o: in function `main':
+=======
+/usr/bin/ld: /tmp/ccyrUWZl.o: in function `main':
+>>>>>>> 15de0685c4194ac710ea113adcd2ae2c7d4e0f09
 /home/xt/xtos/bochs/source/bochs-2.6.2/conftest.c:162: undefined reference to `pthread_join'
 /usr/bin/ld: /home/xt/xtos/bochs/source/bochs-2.6.2/conftest.c:163: undefined reference to `__pthread_register_cancel'
 /usr/bin/ld: /home/xt/xtos/bochs/source/bochs-2.6.2/conftest.c:164: undefined reference to `pthread_create'
@@ -4972,7 +5004,7 @@ configure: failed program was:
 | }
 configure:12851: result: no
 configure:12803: checking whether pthreads work with -Kthread
-configure:12842: gcc -o conftest -g -O2 -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES -Kthread  -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES  conftest.c   -lm -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lharfbuzz -lfontconfig -lfreetype >&5
+configure:12842: gcc -o conftest -g -O2 -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES -Kthread  -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES  conftest.c   -lm  >&5
 gcc: error: unrecognized command line option '-Kthread'; did you mean '-pthread'?
 configure:12842: $? = 1
 configure: failed program was:
@@ -5145,7 +5177,7 @@ configure: failed program was:
 | }
 configure:12851: result: no
 configure:12803: checking whether pthreads work with -kthread
-configure:12842: gcc -o conftest -g -O2 -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES -kthread  -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES  conftest.c   -lm -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lharfbuzz -lfontconfig -lfreetype >&5
+configure:12842: gcc -o conftest -g -O2 -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES -kthread  -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES  conftest.c   -lm  >&5
 gcc: error: unrecognized command line option '-kthread'; did you mean '-pthread'?
 configure:12842: $? = 1
 configure: failed program was:
@@ -5318,7 +5350,7 @@ configure: failed program was:
 | }
 configure:12851: result: no
 configure:12809: checking for the pthreads library -llthread
-configure:12842: gcc -o conftest -g -O2 -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES   -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES  conftest.c -llthread  -lm -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lharfbuzz -lfontconfig -lfreetype >&5
+configure:12842: gcc -o conftest -g -O2 -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES   -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES  conftest.c -llthread  -lm  >&5
 conftest.c: In function 'main':
 conftest.c:163:8: warning: null argument where non-null required (argument 1) [-Wnonnull]
   163 |        pthread_attr_init(0); pthread_cleanup_push(0, 0);
@@ -5500,7 +5532,7 @@ configure: failed program was:
 | }
 configure:12851: result: no
 configure:12803: checking whether pthreads work with -pthread
-configure:12842: gcc -o conftest -g -O2 -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES -pthread  -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES  conftest.c   -lm -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lharfbuzz -lfontconfig -lfreetype >&5
+configure:12842: gcc -o conftest -g -O2 -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES -pthread  -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES  conftest.c   -lm  >&5
 conftest.c: In function 'main':
 conftest.c:163:8: warning: null argument where non-null required (argument 1) [-Wnonnull]
   163 |        pthread_attr_init(0); pthread_cleanup_push(0, 0);
@@ -5512,7 +5544,7 @@ conftest.c:164:8: warning: null argument where non-null required (argument 3) [-
 configure:12842: $? = 0
 configure:12851: result: yes
 configure:12871: checking for joinable pthread attribute
-configure:12884: gcc -o conftest -g -O2 -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES -pthread  -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES  conftest.c   -lm -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lharfbuzz -lfontconfig -lfreetype >&5
+configure:12884: gcc -o conftest -g -O2 -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES -pthread  -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES  conftest.c   -lm  >&5
 configure:12884: $? = 0
 configure:12916: result: PTHREAD_CREATE_JOINABLE
 configure:12923: checking if more special flags are required for pthreads
@@ -5546,6 +5578,7 @@ generated by GNU Autoconf 2.68.  Invocation command line was
 
 on ubuntu
 
+<<<<<<< HEAD
 config.status:1114: creating Makefile
 config.status:1114: creating iodev/Makefile
 config.status:1114: creating iodev/display/Makefile
@@ -5575,6 +5608,36 @@ config.status:1114: creating config.h
 config.status:1284: config.h is unchanged
 config.status:1114: creating ltdlconf.h
 config.status:1284: ltdlconf.h is unchanged
+=======
+config.status:1110: creating Makefile
+config.status:1110: creating iodev/Makefile
+config.status:1110: creating iodev/display/Makefile
+config.status:1110: creating iodev/hdimage/Makefile
+config.status:1110: creating iodev/usb/Makefile
+config.status:1110: creating iodev/network/Makefile
+config.status:1110: creating iodev/sound/Makefile
+config.status:1110: creating bx_debug/Makefile
+config.status:1110: creating bios/Makefile
+config.status:1110: creating cpu/Makefile
+config.status:1110: creating cpu/cpudb/Makefile
+config.status:1110: creating cpu/fpu/Makefile
+config.status:1110: creating memory/Makefile
+config.status:1110: creating gui/Makefile
+config.status:1110: creating disasm/Makefile
+config.status:1110: creating instrument/stubs/Makefile
+config.status:1110: creating misc/Makefile
+config.status:1110: creating doc/docbook/Makefile
+config.status:1110: creating build/linux/bochs-dlx
+config.status:1110: creating bxversion.h
+config.status:1110: creating bxversion.rc
+config.status:1110: creating build/macosx/Info.plist
+config.status:1110: creating build/win32/nsis/Makefile
+config.status:1110: creating build/win32/nsis/bochs.nsi
+config.status:1110: creating host/linux/pcidev/Makefile
+config.status:1110: creating config.h
+config.status:1110: creating ltdlconf.h
+config.status:1280: ltdlconf.h is unchanged
+>>>>>>> 15de0685c4194ac710ea113adcd2ae2c7d4e0f09
 
 ## ---------------- ##
 ## Cache variables. ##
@@ -5716,7 +5779,7 @@ ac_cv_prog_cc_c89=
 ac_cv_prog_cc_g=yes
 ac_cv_prog_cxx_g=yes
 ac_cv_prog_f77_g=no
-ac_cv_prog_make_make_set=yes
+ac_cv_prog_make_make_set=no
 ac_cv_search_opendir='none required'
 ac_cv_sizeof_int_p=8
 ac_cv_sizeof_unsigned_char=1
@@ -5853,7 +5916,7 @@ KERNEL_MODULE_SUFFIX=''
 LDFLAGS=''
 LIBADD_DL='-ldl'
 LIBOBJS=''
-LIBS=' -lm -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lharfbuzz -lfontconfig -lfreetype'
+LIBS=' -lm '
 LIBTOOL='$(SHELL) $(top_builddir)/libtool'
 LINK='$(LIBTOOL) --mode=link --tag CXX $(CXX) -o $@ $(CXXFLAGS) $(LDFLAGS)'
 LINK_CONSOLE='$(LIBTOOL) --mode=link --tag CXX $(CXX) -o $@ $(CXXFLAGS_CONSOLE) $(LDFLAGS)'
@@ -5895,7 +5958,7 @@ RFB_LIBS=''
 RMCOMMAND='rm -f '
 RMMOD=''
 SCSI_OBJS=''
-SET_MAKE=''
+SET_MAKE='MAKE=make'
 SHELL='/bin/bash'
 SLASH='/'
 SOUNDCARD_OBJS=''
@@ -5905,7 +5968,7 @@ SOUND_LINK_OPTS=''
 STRIP='strip'
 SUFFIX_LINE='.SUFFIXES: .cc'
 TAR='/usr/bin/tar'
-TOOLKIT_CXXFLAGS='-pthread -I/usr/include/gtk-2.0 -I/usr/lib/x86_64-linux-gnu/gtk-2.0/include -I/usr/include/pango-1.0 -I/usr/include/atk-1.0 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/pango-1.0 -I/usr/include/fribidi -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/harfbuzz -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/uuid -I/usr/include/freetype2 -I/usr/include/libpng16'
+TOOLKIT_CXXFLAGS=''
 USBCORE_OBJ=''
 USBDEV_OBJS=''
 USBHC_OBJS=''
@@ -5920,7 +5983,11 @@ WX_CXXFLAGS=''
 XMKMF=''
 X_CFLAGS=''
 X_EXTRA_LIBS=''
+<<<<<<< HEAD
 X_LIBS='-lX11  -lXrandr'
+=======
+X_LIBS='  -lXrandr'
+>>>>>>> 15de0685c4194ac710ea113adcd2ae2c7d4e0f09
 X_PRE_LIBS=''
 YACC='not_found'
 ac_ct_CC='gcc'
