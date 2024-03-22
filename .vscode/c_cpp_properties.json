@@ -7,10 +7,9 @@
                 "${workspaceFolder}/the_truth_of_operationg_system/rolling_version/kernel"
             ],
             "defines": [],
-            "compilerPath": "/usr/bin/clang",
-            "cStandard": "c17",
+            "cStandard": "c99",
             "cppStandard": "c++14",
-            "intelliSenseMode": "linux-clang-x64"
+            "intelliSenseMode": "gcc-x64"
         }
     ],
     "version": 4

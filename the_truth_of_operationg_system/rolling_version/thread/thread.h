@@ -87,7 +87,7 @@ struct task_struct
    struct list_elem all_list_tag; // all_list_tag的作用是用于线程队列thread_all_list（这个队列用于管理所有线程）中的结点
    uint32_t *pgdir;               // 进程自己页表的虚拟地址
 
-   uint32_t stack_magic; // 如果线程的栈无限生长，总会覆盖地pcb的信息，那么需要定义个边界数来检测是否栈已经到了PCB的边界(反向覆盖，栈是从)
+   uint32_t stack_magic; // 如果线程的栈无限生长，总会覆盖地pcb的信息，那么需要定义个边界数来检测是否栈已经到了PCB的边界(栈是从高到低生长的，init_thread中栈被定义在PCB+4KB的地方)
 };
 
 void thread_create(struct task_struct *pthread, thread_func function, void *func_arg);
